@@ -1,0 +1,144 @@
+# 📌 Git Basics – Quick Revision Notes
+
+---
+
+## 1️⃣ Check Repository Status
+
+### 🔹 `git status`
+
+- First command to run after opening a project.
+- Tells:
+  - Whether Git is initialized.
+  - Modified files.
+  - Staged files.
+  - Untracked files.
+
+---
+
+## 2️⃣ Add Files to Staging Area (Tracking Zone)
+
+After making changes in the **Working Directory**, move files to the **Staging Area**.
+
+### 🔹 Add all files
+
+```bash
+git add .
+```
+
+- Adds all modified and new files to staging.
+
+### 🔹 Add specific files
+
+```bash
+git add file1.txt file2.txt
+```
+
+- Adds only specified files.
+
+---
+
+## 3️⃣ Commit (Move to Repository Zone)
+
+### 🔹 `git commit -m "Commit Message"`
+
+- Creates a snapshot (checkpoint) of staged files.
+- Moves changes from **Staging Area → Repository**.
+- Commit message is mandatory.
+- Message should clearly describe the change.
+
+---
+
+## 4️⃣ View Commit History
+
+### 🔹 `git log`
+
+- Shows full commit history.
+- Displays:
+  - Commit hash
+  - Author
+  - Date
+  - Message
+
+### 🔹 `git log --oneline`
+
+- Compact version of log.
+- Shows:
+  - Short commit hash
+  - Commit message (one line)
+
+---
+
+## 5️⃣ Git Configuration (One-Time Setup)
+
+### 🔹 Set Username
+
+```bash
+git config --global user.name "Your Name"
+```
+
+### 🔹 Set Email
+
+```bash
+git config --global user.email "your@email.com"
+```
+
+### 🔹 Set Default Editor (VS Code)
+
+```bash
+git config --global core.editor "code --wait"
+```
+
+- `--global` → Applies settings to all repositories on your system.
+
+---
+
+## 6️⃣ `.gitignore` File
+
+### 🔹 What is it?
+
+A file that tells Git which files/folders to ignore (not track).
+
+### 🔹 Why use it?
+
+To avoid pushing:
+
+- `.env` files
+- `node_modules/`
+- Log files
+- Build folders
+- Sensitive information
+
+### 🔹 Example `.gitignore`
+
+```
+.env
+node_modules/
+dist/
+*.log
+```
+
+> Note: If a file is already committed, adding it to `.gitignore` will NOT automatically remove it from tracking.
+
+---
+
+# 🔁 Git Workflow Summary
+
+```
+Working Directory → Staging Area → Repository
+        (edit)          (git add)       (git commit)
+```
+
+---
+
+# 🚀 Basic Git Flow
+
+```bash
+git status
+git add .
+git commit -m "Your message"
+git log --oneline
+```
+
+---
+
+💡 Keep commits small, meaningful, and descriptive.
